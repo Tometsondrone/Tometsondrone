@@ -4,15 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tom et son drone | Photo & Vidéo</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
     <style>
         body {
             margin: 0;
             font-family: Arial, sans-serif;
-            background-color: #ffffff;
+            background: linear-gradient(to bottom, #ffffff, #f2f2f2);
             color: #333;
         }
 
-        /* Style du menu */
+        /* Menu */
         nav {
             position: fixed;
             top: 20px;
@@ -28,47 +29,89 @@
             padding: 10px;
             display: block;
             font-size: 1.1em;
-            transition: background-color 0.3s ease;
+            transition: background-color 0.3s ease, transform 0.3s ease;
         }
         nav a:hover {
             background-color: #575757;
+            transform: scale(1.1);
         }
 
         header {
-            background-color: #f8f8f8;
+            background-color: rgba(255,255,255,0.8);
             padding: 20px;
             text-align: center;
             font-size: 2em;
             font-weight: bold;
-            margin-left: 100px; /* Ajouté pour éviter que le contenu soit masqué par le menu */
+            margin-left: 100px;
         }
+
         section {
             padding: 40px;
             max-width: 1000px;
             margin: auto;
         }
+
         .gallery img, .gallery iframe {
             width: 100%;
             max-width: 300px;
             margin: 10px;
             border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
         }
+
         .gallery {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
             gap: 20px;
         }
+
         footer {
-            background-color: #f8f8f8;
+            background-color: rgba(255,255,255,0.8);
             text-align: center;
             padding: 20px;
             font-size: 0.9em;
             margin-top: 40px;
         }
 
-        /* Responsive Design */
+        /* Formulaire */
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        input, textarea {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1em;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        button {
+            padding: 10px;
+            background-color: #333;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+        button:hover {
+            background-color: #575757;
+            transform: scale(1.05);
+        }
+
+        #confirmation {
+            margin-top: 20px;
+            color: green;
+            font-weight: bold;
+            display: none;
+        }
+
+        /* Responsive */
         @media (max-width: 768px) {
             header {
                 font-size: 1.5em;
@@ -90,80 +133,103 @@
 </head>
 <body>
 
-<!-- Menu de navigation -->
-<nav> id="menu" style="display: 
+<!-- Menu -->
+<nav>
     <a href="#home">Accueil</a>
     <a href="#gallery">Galerie</a>
-    <a href="#à propos de moi">À propos de moi</a>
-    <a href="#à propos de mon drone">À propos de mon drone</a>
+    <a href="#a-propos-de-moi">À propos de moi</a>
+    <a href="#a-propos-de-mon-drone">À propos de mon drone</a>
     <a href="#contact">Contact</a>
 </nav>
-
-
 
 <header>
     Tom et son drone | Photo & Vidéo
 </header>
 
-<section id="home" style="text-align: center; padding: 50px;">
+<section id="home" style="text-align: center;">
     <h1>Bienvenue sur mon site !</h1>
     <p>Je m'appelle Tom, passionné de drone, je réalise des prises de vue aériennes pour sublimer vos projets : immobilier, événements, paysages, publicité...</p>
 </section>
 
 <section class="gallery" id="gallery">
+    <h2>Galerie</h2>
+    <p>Voici quelques exemples de mes réalisations :</p>
     <img src="photo1.jpg" alt="Drone Photo 1">
     <img src="photo2.png" alt="Drone Photo 2">
     <img src="photo3.png" alt="Drone Photo 3">
-
 </section>
 
-
-
-<section id="à propos de moi" style="display: flex; align-items: center; gap: 20px;">
-    <img src="profile.jpg" style="width: 150px; height: 150px; border-radius: 50%; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+<section id="a-propos-de-moi" style="display: flex; align-items: center; gap: 20px;">
+    <img src="profile.jpg" style="width: 150px; height: 150px; border-radius: 50%; box-shadow: 0 2px 5px rgba(0,0,0,0.2);">
     <div>
         <h2>Tom...</h2>
         <p>Depuis tout petit je suis fan de des voitures, d'avions et de drones radiocommandés. 
             J'ai débuté le drone il y a plus de 5 ans en commençant par des petits drones, puis j'ai commencé le drone FPV (First Person View en anglais, qui veut dire vu à la première personne). Pour faire simple, c'est un drone artisanal qui est piloté à l'aide d'une télécommande et de lunettes qui permettent d'avoir le retour vidéo de la caméra du drone.
-            Cette pratique est souvent utilisée dans les courses de drone ou pour obtenir des plans dynamiques. J'ai ensuite acheté un drone professionnel de haute gamme afin de pouvoir faire des plans de bonne qualité. En persévérant en apprenant davantage de techniques cinématiques et avec beaucoup d'entraînement, je vous propose donc mes services pour vous accompagner dans vos projets.   </p>
+            Cette pratique est souvent utilisée dans les courses de drone ou pour obtenir des plans dynamiques. J'ai ensuite acheté un drone professionnel de haute gamme afin de pouvoir faire des plans de bonne qualité. En persévérant en apprenant davantage de techniques cinématiques et avec beaucoup d'entraînement, je vous propose donc mes services pour vous accompagner dans vos projets.</p>
     </div>
 </section>
 
-<section id="à propos de mon drone" style="display: flex; align-items: center; gap: 20px; flex-direction: row-reverse;">
-    <img src="photo1.jpg" style="width: 150px; height: 150px; border-radius: 50%; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+<section id="a-propos-de-mon-drone" style="display: flex; align-items: center; gap: 20px; flex-direction: row-reverse;">
+    <img src="photo1.jpg" style="width: 150px; height: 150px; border-radius: 50%; box-shadow: 0 2px 5px rgba(0,0,0,0.2);">
     <div>
         <h2>...Et son drone</h2>
-        <h2>DJI Mavic Air 2s</h2>
-        <p>-Capteur : 1 pouce CMOS, capable de capturer des images avec une résolution de 50 MP.</p>
-
-        <p>-Vidéo :
-            
-                Résolution 5.4K à 30 fps.
-            
-                Résolution 4K à 60 fps.
-            
-                Résolution 1080p à 120 fps pour des ralentis.</p>
-            
-        <p>-Plage dynamique : HDR.</p>
-            
-        <p>-Autonomie : environ 30min par batterie donc temps de vol total possible : 1h30.</p>
-        <p>-4 capteurs (avant, arrière, bas) pour l'évitement d’obstacles. </p>
-        <p>-Vitesse maximale : 19 m/s (environ 68 km/h).</p>
-        <p>-Positionnement GPS avec stabilisation visuelle pour un vol précis.</p>
+        <h3>DJI Mavic Air 2s</h3>
+        <ul>
+            <li>Capteur : 1" CMOS, 50 MP.</li>
+            <li>Vidéo : 5.4K à 30fps, 4K à 60fps, 1080p à 120fps.</li>
+            <li>HDR, autonomie ~30 min, 1h30 avec plusieurs batteries.</li>
+            <li>Détection d'obstacles (avant, arrière, bas).</li>
+            <li>Vitesse maximale : 68 km/h.</li>
+            <li>GPS précis avec stabilisation visuelle.</li>
+        </ul>
         <p>(pour faire simple,c'est le meilleur :))</p>
-
     </div>
 </section>
 
 <section id="contact">
     <h2>Contact</h2>
-    <p>Email : thiolliertom@gmail.com</p>
-    <p>Téléphone : 06 88 92 93 55</p>
+    <form id="contact-form" action="https://formspree.io/f/mjkwklya" method="POST">
+        <input type="text" name="Nom" placeholder="Votre nom" required>
+        <input type="email" name="Email" placeholder="Votre email" required>
+        <input type="tel" name="Téléphone" placeholder="Votre numéro de téléphone" required>
+        <textarea name="Message" rows="5" placeholder="Votre message" required></textarea>
+        <button type="submit">Envoyer</button>
+    </form>
+    <div id="confirmation">Merci pour votre message ! ✅</div>
+
+    <div style="margin-top: 30px; text-align: center;">
+        <p>Email : <a href="mailto:thiolliertom@gmail.com">thiolliertom@gmail.com</a></p>
+        <p>Téléphone : <a href="tel:+33688929355">06 88 92 93 55</a></p>
+    </div>
 </section>
 
 <footer>
     © 2025 Tom Thiollier - Tous droits réservés
 </footer>
+
+<script>
+    const form = document.getElementById('contact-form');
+    const confirmation = document.getElementById('confirmation');
+
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const data = new FormData(form);
+        fetch(form.action, {
+            method: 'POST',
+            body: data,
+            headers: { 'Accept': 'application/json' }
+        }).then(response => {
+            if (response.ok) {
+                form.reset();
+                confirmation.style.display = 'block';
+            } else {
+                alert('Une erreur est survenue, veuillez réessayer.');
+            }
+        }).catch(error => {
+            alert('Erreur réseau. Essayez plus tard.');
+        });
+    });
+</script>
 
 </body>
 </html>
