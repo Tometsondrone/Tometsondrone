@@ -197,6 +197,7 @@
     <a href="#gallery">Galerie</a>
     <a href="#a-propos-de-moi">À propos de moi</a>
     <a href="#a-propos-de-mon-drone">À propos de mon drone</a>
+    <a href="#mes-tarifs">mes tarifs</a>
     <a href="#contact">Contact</a>
   </div>
 </nav>
@@ -205,17 +206,21 @@
   Tom et son drone | Photo & Vidéo
 </header>
 
-<section id="home" style="text-align: center;">
+<section id="home" style="display: flex; flex-direction: column; align-items: center; gap: 20px;">
   <h1>Bienvenue sur mon site !</h1>
-  <p>Je m'appelle Tom, passionné de drone, je réalise des prises de vue aériennes pour sublimer vos projets : immobilier, événements, paysages, publicité...</p>
+  <div style="display: flex; align-items: center; gap: 20px; flex-direction: row;">
+    <img src="photo1.jpg" style="width: 300px; height: 300px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.2);">
+    <p>Je m'appelle Tom, passionné de drone, je réalise des prises de vue aériennes pour sublimer vos projets : immobilier, événements, paysages, publicité...</p>
+  </div>
 </section>
 
 <section class="gallery" id="gallery">
   <h2>Galerie</h2>
-  <p>Voici quelques exemples de mes réalisations :</p>
-  <img src="photo1.jpg" alt="Drone Photo 1">
-  <img src="photo2.png" alt="Drone Photo 2">
-  <img src="photo3.png" alt="Drone Photo 3">
+  <h3>Voici quelques exemples de mes réalisations :</h3>
+  <div>
+    <img src="photo2.png" alt="Drone Photo 2">
+    <img src="photo3.png" alt="Drone Photo 3">
+  </div>
 </section>
 
 <section id="a-propos-de-moi" style="display: flex; align-items: center; gap: 20px;">
@@ -230,7 +235,7 @@
 </section>
 
 <section id="a-propos-de-mon-drone" style="display: flex; align-items: center; gap: 20px; flex-direction: row-reverse;">
-  <img src="photo1.jpg" style="width: 150px; height: 150px; border-radius: 50%; box-shadow: 0 2px 5px rgba(0,0,0,0.2);">
+  <img src="drone.jpg" style="width: 150px; height: 150px; border-radius: 50%; box-shadow: 0 2px 5px rgba(0,0,0,0.2);">
   <div>
     <h2>...Et son drone</h2>
     <h3>DJI Mavic Air 2s</h3>
@@ -245,7 +250,14 @@
     <p>(Pour faire simple, c'est le meilleur :))</p>
   </div>
 </section>
-
+<section id="mes-tarifs">
+  <h2>Mes tarifs</h2>
+  <p>Je propose des forfaits adaptés à vos besoins :</p>
+  <ul>
+    <li>Forfait 1 : 80-130€  -  Photos et vidéos 4K - sans montage.</li>
+    <li>Forfait 2 : 130-180€  -  Photos et vidéos 4K  - avec montage (1-2 min idéale pour une présentation rapide ou un résumé).</li>
+    <li>Forfait 3 : 180-250€  -  Photos et vidéos 4K  - avec montage (2-5 min idéale pour une présentation complète et détaillée).</li>
+</section>
 <section id="contact">
   <h2>Contact</h2>
   <form id="contact-form" action="https://formspree.io/f/mjkwklya" method="POST">
@@ -258,7 +270,7 @@
   <div id="confirmation">Merci pour votre message ! ✅</div>
 
   <div style="margin-top: 30px; text-align: center;">
-    <p>Email : <a href="mailto:thiolliertom@gmail.com">thiolliertom@gmail.com</a></p>
+    <p>Email : <a href="mailto:tometsondrone@gmail.com">tometsondrone@gmail.com</a></p>
     <p>Téléphone : <a href="tel:+33688929355">06 88 92 93 55</a></p>
   </div>
 </section>
