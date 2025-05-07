@@ -181,6 +181,23 @@
         padding: 8px;
       }
     }
+    .social-links {
+      margin-top: 20px;
+      display: flex;
+      gap: 15px;
+      justify-content: center; /* ou "flex-start" si tu veux à gauche */
+    }
+
+    .social-links img {
+      transition: transform 0.3s;
+    }
+
+    .social-links img:hover {
+      transform: scale(1.2);
+    }
+    html {
+      scroll-behavior: smooth;
+    }
   </style>
 </head>
 <body>
@@ -216,7 +233,7 @@
 
 <section class="gallery" id="gallery">
   <h2>Galerie</h2>
-  <h3>Voici quelques exemples de mes réalisations :</h3>
+  <p>Voici quelques exemples de mes réalisations :</p>
   <div>
     <div style="text-align: center; margin-bottom: 20px;">
       <iframe width="300" height="300"
@@ -273,8 +290,8 @@
   <p>Je propose des forfaits adaptés à vos besoins :</p>
   <ul>
     <li>Forfait 1 : 80-130€  -  Photos et vidéos 4K - sans montage.</li>
-    <li>Forfait 2 : 130-180€  -  Photos et vidéos 4K  - avec montage (1-2 min idéale pour une présentation rapide ou un résumé).</li>
-    <li>Forfait 3 : 180-250€  -  Photos et vidéos 4K  - avec montage (2-5 min idéale pour une présentation complète et détaillée).</li>
+    <li>Forfait 2 : 130-180€  -  Photos et vidéos 4K  - avec montage (1-2 min pour une présentation rapide ou un résumé).</li>
+    <li>Forfait 3 : 180-250€  -  Photos et vidéos 4K  - avec montage (2-5 min pour une présentation complète et détaillée).</li>
 </section>
 <section id="contact">
   <h2>Contact</h2>
@@ -290,6 +307,17 @@
   <div style="margin-top: 30px; text-align: center;">
     <p>Email : <a href="mailto:tometsondrone@gmail.com">tometsondrone@gmail.com</a></p>
     <p>Téléphone : <a href="tel:+33688929355">06 88 92 93 55</a></p>
+  </div>
+  <div class="social-links" style="margin-top: 20px; text-align: center;">
+    <a href="https://www.instagram.com/tometsondrone/" target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram" width="50" height="50">
+    </a>
+    <a href="https://www.facebook.com/Tometsondrone/" target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook" width="50" height="50">
+    </a>
+    <a href="https://www.youtube.com/@tometsondrone" target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube" width="50" height="50">
+    </a>
   </div>
 </section>
 
