@@ -233,45 +233,138 @@
 
 <section class="gallery" id="gallery">
   <div>
-  <h2 style="text-align: center;">Galerie</h2>
-  <p>Voici quelques exemples de mes réalisations :</p>
-    <p>Réalisées dernièrement : Photos de mariage</p>
+    <h2 style="text-align: center;">Galerie</h2>
+    <p>Voici quelques exemples de mes réalisations :</p>
   </div>
-  <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px;">
-    <img src="mariage.jpg" alt="Drone Photo 1" style="width: 300px; height: 200px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.2);">
-  </div>
-  <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px;">
-    <img src="IMG_0312.jpeg" alt="Drone Photo 4" style="width: 300px; height: 200px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.2);">
-    <img src="IMG_0314.jpeg" alt="Drone Photo 5" style="width: 300px; height: 200px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.2);">
-    <img src="IMG_0315.jpeg" alt="Drone Photo 6" style="width: 300px; height: 200px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.2);">
-  </div>
-  <div>
-    <div style="text-align: center; margin-bottom: 20px;">
-      <iframe width="300" height="300"
-        src="https://www.youtube.com/embed/VzBGJcBiX1U"
-        title="YouTube video player"
-        frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        allowfullscreen>
-      </iframe>
-      <iframe width="300" height="300"
-        src="https://www.youtube.com/embed/_GwoIZeMZOg"
-        title="YouTube video player"
-        frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        allowfullscreen>
-      </iframe>
-      <iframe width="300" height="300"
-        src="https://www.youtube.com/embed/ov_sJ8lrBWc"
-        title="YouTube video player"
-        frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        allowfullscreen>
-      </iframe>
+
+  <!-- Vue principale avec dossiers (miniatures) -->
+  <div id="main-gallery" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; margin-top: 20px;">
+    <!-- Dossier Mariages -->
+    <div onclick="openAlbum('album1')" style="cursor:pointer; text-align:center;">
+      <img src="mariage.jpg" alt="Mariages" style="width: 250px; height: 180px; object-fit: cover; border-radius: 12px; box-shadow: 0 3px 6px rgba(0,0,0,0.3);">
+      <p style="margin-top:8px; font-weight:bold;">📂Mariages</p>
     </div>
+    <!-- Dossier Vidéos -->
+    <div onclick="openAlbum('album2')" style="cursor:pointer; text-align:center;">
+      <img src="montgolfiere.jpg" alt="Vidéos" style="width: 250px; height: 180px; object-fit: cover; border-radius: 12px; box-shadow: 0 3px 6px rgba(0,0,0,0.3);">
+      <p style="margin-top:8px; font-weight:bold;">📂Vidéos</p>
+    </div>
+    <!-- Dossier Divers -->
+    <div onclick="openAlbum('album3')" style="cursor:pointer; text-align:center;">
+      <img src="photo2.png" alt="Divers" style="width: 250px; height: 180px; object-fit: cover; border-radius: 12px; box-shadow: 0 3px 6px rgba(0,0,0,0.3);">
+      <p style="margin-top:8px; font-weight:bold;">📂Divers</p>
+    </div>
+      <!-- Dossier photos de groupe -->
+    <div onclick="openAlbum('album4')" style="cursor:pointer; text-align:center;">
+      <img src="IMG_0312.jpeg" alt="Photos de groupe" style="width: 250px; height: 180px; object-fit: cover; border-radius: 12px; box-shadow: 0 3px 6px rgba(0,0,0,0.3);">
+      <p style="margin-top:8px; font-weight:bold;">📂Photos de groupe</p>
+    </div>
+      <!-- Dossier Festival -->
+    <div onclick="openAlbum('album5')" style="cursor:pointer; text-align:center;">
+      <img src="fes_1.JPG" alt="Festival" style="width: 250px; height: 180px; object-fit: cover; border-radius: 12px; box-shadow: 0 3px 6px rgba(0,0,0,0.3);">
+      <p style="margin-top:8px; font-weight:bold;">📂Festival</p>
+    </div>
+  </div>
+
+  <!-- Album Mariages -->
+  <div id="album1" class="album" style="display:none; text-align: center;">
+    <h3>Photos de mariage</h3>
     <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px;">
-      <img src="photo2.png" alt="Drone Photo 2">
-      <img src="photo3.png" alt="Drone Photo 3">
+      <img src="mariage.jpg" alt="Mariage 1" style="width: 300px; height: 200px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.2);"
+           onclick="openLightbox(this.src)">
+    </div>
+    <button onclick="goBack()" style="margin-top:20px; padding:10px 20px; border:none; background:#333; color:white; border-radius:8px; cursor:pointer;">⬅ Retour</button>
+  </div>
+
+  <!-- Album Vidéos -->
+  <div id="album2" class="album" style="display:none; text-align: center;">
+    <h3>Vidéos</h3>
+    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px;">
+      <iframe width="300" height="300" src="https://www.youtube.com/embed/VzBGJcBiX1U" frameborder="0" allowfullscreen></iframe>
+      <iframe width="300" height="300" src="https://www.youtube.com/embed/_GwoIZeMZOg" frameborder="0" allowfullscreen></iframe>
+      <iframe width="300" height="300" src="https://www.youtube.com/embed/ov_sJ8lrBWc" frameborder="0" allowfullscreen></iframe>
+      <iframe width="300" height="300" src="https://www.youtube.com/embed/l1Yp_xLUq2U?si=T-pi4mQsxX3xpgmk" frameborder="0" allowfullscreen></iframe>
+    </div>
+    <button onclick="goBack()" style="margin-top:20px; padding:10px 20px; border:none; background:#333; color:white; border-radius:8px; cursor:pointer;">⬅ Retour</button>
+  </div>
+
+  <!-- Album Divers -->
+  <div id="album3" class="album" style="display:none; text-align: center;">
+    <h3>Divers</h3>
+    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px;">
+      <img src="photo2.png" alt="Drone Photo 2" style="width: 300px; height: 200px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.2);"
+            onclick="openLightbox(this.src)">
+      <img src="photo3.png" alt="Drone Photo 3" style="width: 300px; height: 200px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.2);"
+           onclick="openLightbox(this.src)">
+    </div>
+    <button onclick="goBack()" style="margin-top:20px; padding:10px 20px; border:none; background:#333; color:white; border-radius:8px; cursor:pointer;">⬅ Retour</button>
+  </div>
+
+  <!-- Album Photo de groupe -->
+  <div id="album4" class="album" style="display:none; text-align: center;">
+    <h3>Photos de groupe</h3>
+    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px;">
+      <img src="IMG_0312.jpeg" alt="Mariage 2" style="width: 300px; height: 200px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.2);"
+            onclick="openLightbox(this.src)">
+      <img src="IMG_0314.jpeg" alt="Mariage 3" style="width: 300px; height: 200px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.2);"
+           onclick="openLightbox(this.src)">
+      <img src="IMG_0315.jpeg" alt="Mariage 4" style="width: 300px; height: 200px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.2);"
+           onclick="openLightbox(this.src)">
+    </div>
+    <button onclick="goBack()" style="margin-top:20px; padding:10px 20px; border:none; background:#333; color:white; border-radius:8px; cursor:pointer;">⬅ Retour</button>
+  </div>
+
+    <!-- Album Festival -->
+  <div id="album5" class="album" style="display:none; text-align: center;">
+    <h3>Festival</h3>
+    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px;">
+      <img src="fes_1.JPG" alt="Mariage 1" style="width: 300px; height: 200px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.2);"
+           onclick="openLightbox(this.src)">
+      <img src="fes_2.JPG" alt="Mariage 1" style="width: 300px; height: 200px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.2);"
+           onclick="openLightbox(this.src)">
+      <img src="fes_3.JPG" alt="Mariage 1" style="width: 300px; height: 200px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.2);"
+           onclick="openLightbox(this.src)">
+      <img src="fes_4.JPG" alt="Mariage 1" style="width: 300px; height: 200px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.2);"
+           onclick="openLightbox(this.src)">
+      <img src="fes_5.JPG" alt="Mariage 1" style="width: 300px; height: 200px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.2);"
+           onclick="openLightbox(this.src)">
+      <img src="fes_6.JPG" alt="Mariage 1" style="width: 300px; height: 200px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.2);"
+           onclick="openLightbox(this.src)">
+    </div>
+    <button onclick="goBack()" style="margin-top:20px; padding:10px 20px; border:none; background:#333; color:white; border-radius:8px; cursor:pointer;">⬅ Retour</button>
+  </div>
+
+    <!-- Lightbox -->
+<div id="lightbox" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.9); justify-content:center; align-items:center; z-index:1000;">
+  <span onclick="closeLightbox()" style="position:absolute; top:20px; right:30px; font-size:40px; color:white; cursor:pointer;">&times;</span>
+
+  <!-- Conteneur centré -->
+  <div style="position:relative; width:90%; max-width:1200px; aspect-ratio:16/9; background:black; border-radius:8px; overflow:hidden; display:flex; justify-content:center; align-items:center;">
+    <img id="lightbox-img" src="" style="max-width:100%; max-height:100%; object-fit:contain;">
+  </div>
+</div>
+
+  <!-- Script pour gérer les dossiers -->
+  <script>
+    function openAlbum(id) {
+      document.getElementById("main-gallery").style.display = "none";
+      document.querySelectorAll(".album").forEach(el => el.style.display = "none");
+      document.getElementById(id).style.display = "block";
+    }
+    function goBack() {
+      document.querySelectorAll(".album").forEach(el => el.style.display = "none");
+      document.getElementById("main-gallery").style.display = "flex";
+    }
+        // Ouvrir une image en grand
+    function openLightbox(src) {
+      document.getElementById("lightbox-img").src = src;
+      document.getElementById("lightbox").style.display = "flex";
+    }
+
+    function closeLightbox() {
+      document.getElementById("lightbox").style.display = "none";
+    }
+  </script>
 </section>
 
 <section id="a-propos-de-moi" style="display: flex; align-items: center; gap: 20px;">
